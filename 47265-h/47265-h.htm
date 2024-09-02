@@ -1,0 +1,3551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .justify    { text-align: justify }
+  .center     { text-align: center; text-indent: 0 }
+  .centerleft { text-align: center; text-indent: 0 }
+  .right      { text-align: right;  text-indent: 0 }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0;
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst, p.noindent {
+    text-indent: 0
+  }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered {
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   {
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em   10% }
+  div.image    { margin: 1.5em  0  }
+  div.caption  { margin: 1.5em  0 }
+  div.legend   { margin: 1.5em  0 }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td,
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td,
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  div.footnote-group          { margin: 1em 0 }
+  table.footnote td.label     { width: 2em; text-align: right; padding-left: 0 }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 }
+
+  .first            { margin-top: 0 !important;
+                    text-indent: 0 !important }
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  .pageno           { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after     { color: gray; content: '[' attr(title) ']' }
+  .lineno           { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after     { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref      { float: right }
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /* DIV */
+  pre               { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+  <title>THE PIXIES' PLOT</title>
+</head>
+<body>
+  <div class="document" id="the-pixies-plot">
+    <h1 class="center document-title level-1 pfirst title"><span class="x-large">THE PIXIES' PLOT</span></h1><!-- this is the default PG-RST stylesheet -->
+    <!-- figure and image styles for non-image formats -->
+    <!-- default transition -->
+    <!-- default attribution -->
+    <!-- -*- encoding: utf-8 -*- -->
+    <div class="clearpage"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="align-None container titlepage">
+      <div class="vspace" style="height: 4em"></div>
+      <p class="center pfirst"><span class="xx-large">PIXIES' PLOT</span></p>
+      <div class="vspace" style="height: 2em"></div>
+      <p class="center pfirst"><span class="medium">By</span></p>
+      <p class="center pnext"><span class="large">EDEN PHILLPOTTS</span></p>
+      <p class="center pnext"><span class="small">Author of<br /></span> <em class="italics small">As the Wind Blows; Evander<br />
+      Pan &amp; the Twins<br />
+      &amp;c.</em></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="medium">LONDON<br />
+      GRANT RICHARDS LTD<br />
+      St. Martin's Street, W.C.<br />
+      1922</span></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="align-None container verso">
+      <p class="center pfirst"><span class="small">Printed in England at the Cloister Press, Heaton Mersey, near Manchester</span></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="align-None container dedication">
+      <p class="center pfirst"><em class="italics">To</em> <span><br />
+      GRANT RICHARDS</span></p>
+      <div class="vspace" style="height: 2em"></div><!--  -->
+      <div class="line-block outermost">
+        <div class="line">
+          <span>In beauty manifold are wrought</span>
+        </div>
+        <div class="line">
+          <span>Your gardens, full of charm and grace,</span>
+        </div>
+        <div class="line">
+          <span>That hold the best in every sort</span>
+        </div>
+        <div class="line">
+          <span>But entrance yield to nothing base.</span>
+        </div>
+        <div class="line">
+          <span>And 'mid their lawns, austere and bright,</span>
+        </div>
+        <div class="line">
+          <span>Though statues gleam and fountains play,</span>
+        </div>
+        <div class="line">
+          <span>There's one wild dingle where half light</span>
+        </div>
+        <div class="line">
+          <span>Of faery never dies away.</span>
+        </div>
+        <div class="line">
+          &nbsp;
+        </div>
+        <div class="line">
+          <span>There hang your wreath within a glade</span>
+        </div>
+        <div class="line">
+          <span>Ere berries shrink and blossoms pine;</span>
+        </div>
+        <div class="line">
+          <span>For pixy blooms too quickly fade</span>
+        </div>
+        <div class="line">
+          <span>Plucked by this clumsy hand of mine.</span>
+        </div>
+        <div class="line">
+          <span>Yet, howsoever swift their end,</span>
+        </div>
+        <div class="line">
+          <span>They hold a more enduring seed</span>
+        </div>
+        <div class="line">
+          <span>And bring you, from a kindly friend,</span>
+        </div>
+        <div class="line">
+          <span>Good will, to dignify the deed.</span>
+        </div>
+        <div class="line">
+          &nbsp;
+        </div>
+        <div class="line">
+          <span>E. P.</span>
+        </div>
+      </div>
+    </div>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst"><span class="bold large">CONTENTS</span></p>
+    <ol class="arabic simple">
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#pixies-plot">Pixies' Plot</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-charm">The Charm</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#joe-s-donkey">Joe's Donkey</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#diana">Diana</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-mouse-and-the-epitaph">The Mouse and the Epitaph</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#echo-and-narcissus">Echo and Narcissus</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-sandhills">The Sandhills</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-ghost">The Ghost</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#a-test">A Test</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#dreams">Dreams</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-fire-drake">The Fire-drake</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-seven-maidens">The Seven Maidens</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-heron">The Heron</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-grief">The Grief</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#on-the-ebb">On the Ebb</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#scandal">Scandal</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#to-a-bat">To a Bat</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#moon-moth">Moon-Moth</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-hunting">The Hunting</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-good-girl">The Good Girl</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-lover">The Lover</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-motor-car">The Motor Car</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-sea-scouts">The Sea Scouts</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#song-for-the-spheres">Song for the Spheres</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#the-circle">The Circle</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#to-anthea-s-bosom">To Anthea's Bosom</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#dust">Dust</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#young-night">Young Night</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#jill-bassett">Jill Bassett</a></p>
+      </li>
+      <li>
+        <p class="first noindent pfirst"><a class="reference internal" href="#tailpiece">Tailpiece</a></p>
+      </li>
+    </ol>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="pixies-plot"><span class="bold large">THE PIXIES' PLOT</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="pfirst"><span>(</span><em class="italics">A pleasant maxim of old time directed the gardener to leave one corner as nature planned it, for the little people. Thus welcomed, they might be trusted to show their human hosts goodwill, friendship, and service.</em><span>)</span></p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>You have it, or you have it not:</span>
+          </div>
+          <div class="line">
+            <span>The cantle of the Pixies' plot,</span>
+          </div>
+          <div class="line">
+            <span>Where never spade nor hoe shall ply</span>
+          </div>
+          <div class="line">
+            <span>To break that treasured sanctity.</span>
+          </div>
+          <div class="line">
+            <span>Touch no bloom there; uproot no weed;</span>
+          </div>
+          <div class="line">
+            <span>Let what will blow.</span>
+          </div>
+          <div class="line">
+            <span>Suffer the thistle, briar and thorn to grow,</span>
+          </div>
+          <div class="line">
+            <span>The dandelion to seed.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Though full the garden of your mind,</span>
+          </div>
+          <div class="line">
+            <span>Well planted on a soil that's kind;</span>
+          </div>
+          <div class="line">
+            <span>Your hedges gay, your borders clean,</span>
+          </div>
+          <div class="line">
+            <span>Your seasons fair, your clime serene,</span>
+          </div>
+          <div class="line">
+            <span>Yet trammel not the Pixies' mite,</span>
+          </div>
+          <div class="line">
+            <span>For well-coming</span>
+          </div>
+          <div class="line">
+            <span>Chance little, wandering, weary, fairy thing</span>
+          </div>
+          <div class="line">
+            <span>Lost in the dim owl-light.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Still virgin, free and set apart,</span>
+          </div>
+          <div class="line">
+            <span>Ordain one dingle of your heart,</span>
+          </div>
+          <div class="line">
+            <span>Where visions home and wing to you</span>
+          </div>
+          <div class="line">
+            <span>The golden dreams that might come true.</span>
+          </div>
+          <div class="line">
+            <span>Herein a gentler dawn than day</span>
+          </div>
+          <div class="line">
+            <span>Shall often break</span>
+          </div>
+          <div class="line">
+            <span>For foot-sore spirits, tired of reason's ache,</span>
+          </div>
+          <div class="line">
+            <span>And children come to play.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-charm"><span class="bold large">THE CHARM</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When chafers drone their litany</span>
+          </div>
+          <div class="line">
+            <span>And pray, "Oh, Father, grant that we</span>
+          </div>
+          <div class="line">
+            <span>From airy-mouse delivered be,"</span>
+          </div>
+          <div class="line">
+            <span>Go seek the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Under the sky, when a star shoots,</span>
+          </div>
+          <div class="line">
+            <span>Beneath an oak, when the owl hoots,</span>
+          </div>
+          <div class="line">
+            <span>Gather ye simples, dig ye roots</span>
+          </div>
+          <div class="line">
+            <span>For the rare charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>That glassy ghost upon a thorn--</span>
+          </div>
+          <div class="line">
+            <span>The raiment of a snake outworn--</span>
+          </div>
+          <div class="line">
+            <span>Must backward through the dark be borne</span>
+          </div>
+          <div class="line">
+            <span>To feed the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A glow-worm--she whose gentle light</span>
+          </div>
+          <div class="line">
+            <span>Glimmers green-gold through a blue night</span>
+          </div>
+          <div class="line">
+            <span>Beside the churchyard aconite--</span>
+          </div>
+          <div class="line">
+            <span>Shall help the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>One willow from the cradle take</span>
+          </div>
+          <div class="line">
+            <span>Where a boy baby lies awake,</span>
+          </div>
+          <div class="line">
+            <span>And splinters off a coffin break</span>
+          </div>
+          <div class="line">
+            <span>To build the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A tarnished silver chalice bring,</span>
+          </div>
+          <div class="line">
+            <span>Dead gossips gave at christening,</span>
+          </div>
+          <div class="line">
+            <span>And dip the moonlight from a spring</span>
+          </div>
+          <div class="line">
+            <span>To crown the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>This much, God wot, a child might do,</span>
+          </div>
+          <div class="line">
+            <span>Yet all must fail if haply you</span>
+          </div>
+          <div class="line">
+            <span>Lack a child's faith, so trusting, true,</span>
+          </div>
+          <div class="line">
+            <span>To bless the charm.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Many the spells of high degree</span>
+          </div>
+          <div class="line">
+            <span>And fruitful happiness I see</span>
+          </div>
+          <div class="line">
+            <span>All lost, for faith to set them free</span>
+          </div>
+          <div class="line">
+            <span>And work the charm.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="joe-s-donkey"><span class="bold large">JOE'S DONKEY</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The harp of night had silver strings,</span>
+          </div>
+          <div class="line">
+            <span>The moon was low, the stars burned dim,</span>
+          </div>
+          <div class="line">
+            <span>When from a wood, with roaring wings,</span>
+          </div>
+          <div class="line">
+            <span>Joe flushed a brace of cherubim.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>His eye did bulge at sign so brave</span>
+          </div>
+          <div class="line">
+            <span>To see the shining angels pass;</span>
+          </div>
+          <div class="line">
+            <span>Then, happening beside her grave,</span>
+          </div>
+          <div class="line">
+            <span>He met his dead and buried ass!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She'd broke a leg and so was slain</span>
+          </div>
+          <div class="line">
+            <span>And buried here a week ago;</span>
+          </div>
+          <div class="line">
+            <span>Now, all alive and sound again,</span>
+          </div>
+          <div class="line">
+            <span>She brayed with joy to welcome Joe!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A holy cross that donkeys bear,</span>
+          </div>
+          <div class="line">
+            <span>Since Jesus Christ did deign to ride,</span>
+          </div>
+          <div class="line">
+            <span>The cherubs tempted to repair</span>
+          </div>
+          <div class="line">
+            <span>That ancient beast in bone and hide.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The harp of morn had golden strings</span>
+          </div>
+          <div class="line">
+            <span>Ere home they came--Joe's ass and he;</span>
+          </div>
+          <div class="line">
+            <span>And when their neighbours heard these things</span>
+          </div>
+          <div class="line">
+            <span>They praised the Lord right heartily.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="diana"><span class="bold large">DIANA</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Look not upon a moon that's new,</span>
+          </div>
+          <div class="line">
+            <span>For with her bitter sickle keen</span>
+          </div>
+          <div class="line">
+            <span>She comes between, she comes between,</span>
+          </div>
+          <div class="line">
+            <span>And cuts the tender from the true.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Look not upon a white full moon:</span>
+          </div>
+          <div class="line">
+            <span>Her stiff-starched pudency doth shame</span>
+          </div>
+          <div class="line">
+            <span>The throbbing pulse, the leaping flame,</span>
+          </div>
+          <div class="line">
+            <span>And freezes passion at its noon.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Look not upon a moon that's old</span>
+          </div>
+          <div class="line">
+            <span>With fallen breast and shadowy eyes,</span>
+          </div>
+          <div class="line">
+            <span>Till the last hope of loving dies,</span>
+          </div>
+          <div class="line">
+            <span>And heart's outworn and blood run cold.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-mouse-and-the-epitaph"><span class="bold large">THE MOUSE AND THE EPITAPH</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>In moonlight grey the hungry church-yard mouse</span>
+          </div>
+          <div class="line">
+            <span>Sat on old William Blee--his narrow house.</span>
+          </div>
+          <div class="line">
+            <span>Climbing the mound, an ancient slate he read,</span>
+          </div>
+          <div class="line">
+            <span>Then spoke, with rustic frankness, to the dead.</span>
+          </div>
+          <div class="line">
+            <span>"'A husband and a father dear': What then?</span>
+          </div>
+          <div class="line">
+            <span>So much is true of mice as well as men.</span>
+          </div>
+          <div class="line">
+            <span>'Friend to the poor'? That's humbug, Billy Blee!</span>
+          </div>
+          <div class="line">
+            <span>When did you ever spare a crumb for me?"</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="echo-and-narcissus"><span class="bold large">ECHO AND NARCISSUS</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Through the green dell she went,</span>
+          </div>
+          <div class="line">
+            <span>Bright haired, with cheeks that burned;</span>
+          </div>
+          <div class="line">
+            <span>Her passion hardly pent;</span>
+          </div>
+          <div class="line">
+            <span>Her eyes upon him turned.</span>
+          </div>
+          <div class="line">
+            <span>Her crocus-coloured gown</span>
+          </div>
+          <div class="line">
+            <span>Over her white, young breast beat up and down.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Adream, he did not guess,</span>
+          </div>
+          <div class="line">
+            <span>But dwelt upon his thought</span>
+          </div>
+          <div class="line">
+            <span>Of perfect loveliness,</span>
+          </div>
+          <div class="line">
+            <span>Nor heeded when she caught</span>
+          </div>
+          <div class="line">
+            <span>A sigh his bosom breathed,</span>
+          </div>
+          <div class="line">
+            <span>And murmured it again with music wreathed.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh, wasted wealth of love;</span>
+          </div>
+          <div class="line">
+            <span>While Echo's heart will break,</span>
+          </div>
+          <div class="line">
+            <span>Narcissus from above,</span>
+          </div>
+          <div class="line">
+            <span>Within a glassy lake,</span>
+          </div>
+          <div class="line">
+            <span>Beholds perfection lie</span>
+          </div>
+          <div class="line">
+            <span>And, for the vision of himself, must die.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Now, hid in bare-ribbed rock</span>
+          </div>
+          <div class="line">
+            <span>With crocus-coloured veins,</span>
+          </div>
+          <div class="line">
+            <span>She guards from windy shock,</span>
+          </div>
+          <div class="line">
+            <span>She shields from wild March rains,</span>
+          </div>
+          <div class="line">
+            <span>Where grass and granite meet,</span>
+          </div>
+          <div class="line">
+            <span>The daffodil that's budding at her feet.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-sandhills"><span class="bold large">THE SANDHILLS</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh, naked-footed boy, with the wild hair</span>
+          </div>
+          <div class="line">
+            <span>And laughing eyes, is it so long ago</span>
+          </div>
+          <div class="line">
+            <span>Among these windy dunes you made your lair,</span>
+          </div>
+          <div class="line">
+            <span>Beside the immutable sea's unwearied ebb and flow?</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Above you sings the horrent bent; the sun</span>
+          </div>
+          <div class="line">
+            <span>Finds you and burns your budding limbs to brown;</span>
+          </div>
+          <div class="line">
+            <span>You race the waves and wade and leap and run,</span>
+          </div>
+          <div class="line">
+            <span>Then in the sweet, hot sand, contented, cuddle down</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>You dream great dreams, while all the upper air</span>
+          </div>
+          <div class="line">
+            <span>Is musical with mews; and round about,</span>
+          </div>
+          <div class="line">
+            <span>Upon the flats among the sea-ways there,</span>
+          </div>
+          <div class="line">
+            <span>The dim sea-lavender spreads her purple fingers out.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And still the sandhills roll and still the sea</span>
+          </div>
+          <div class="line">
+            <span>Flings a straight line of everlasting blue</span>
+          </div>
+          <div class="line">
+            <span>Athwart their shining hillocks; solemnly</span>
+          </div>
+          <div class="line">
+            <span>The ships go by, but not the wondrous ships you knew.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When first your path among the sand dunes fell--</span>
+          </div>
+          <div class="line">
+            <span>The dunes that stretched as now and shone of yore</span>
+          </div>
+          <div class="line">
+            <span>In their bright nakedness--a magic spell</span>
+          </div>
+          <div class="line">
+            <span>Of mystery they wove along the shining shore.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>This poppy with the horn, this bindweed white</span>
+          </div>
+          <div class="line">
+            <span>And salicornia in its crimson bands</span>
+          </div>
+          <div class="line">
+            <span>Meant more, far more than beauty and delight:</span>
+          </div>
+          <div class="line">
+            <span>They stood for treasure torn from drowning pirates' hands.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>These amber weeds were then a garment brave;</span>
+          </div>
+          <div class="line">
+            <span>These agate stones were gems of splendid size</span>
+          </div>
+          <div class="line">
+            <span>Once decked a mermaid in a deep sea cave,</span>
+          </div>
+          <div class="line">
+            <span>Lit by gigantic fish from their green, glimmering eyes.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The sandhills were your giants, cruel or kind;</span>
+          </div>
+          <div class="line">
+            <span>Each falling billow told another tale;</span>
+          </div>
+          <div class="line">
+            <span>Fairies and goblins flew upon the wind;</span>
+          </div>
+          <div class="line">
+            <span>There lurked a tragedy in every sea-bird's wail.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And now the watchful sea doth bid me say;</span>
+          </div>
+          <div class="line">
+            <span>The salt air whispers me to speak and tell</span>
+          </div>
+          <div class="line">
+            <span>Where is that little boy from yesterday</span>
+          </div>
+          <div class="line">
+            <span>Whom wind and wave and sand and sunshine knew so well?</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"He was our playmate; us he understood</span>
+          </div>
+          <div class="line">
+            <span>And ran to us with glory in his eyes;</span>
+          </div>
+          <div class="line">
+            <span>We loved him and we wrought to work his good;</span>
+          </div>
+          <div class="line">
+            <span>We made him strong and brave and with our wisdom wise.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Will he not come again? The flowerets small</span>
+          </div>
+          <div class="line">
+            <span>Have opened for his eager hands once more;</span>
+          </div>
+          <div class="line">
+            <span>Among the yellow whins the linnets call,</span>
+          </div>
+          <div class="line">
+            <span>The wrack and shells he sought still drift along the shore.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"He climbed the crests of all our ridges grey</span>
+          </div>
+          <div class="line">
+            <span>And sang to us and paddled where our foam</span>
+          </div>
+          <div class="line">
+            <span>Thins to a crystal film. But yesterday</span>
+          </div>
+          <div class="line">
+            <span>A happy sprite was he; where now does our boy roam?</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Deep of the many voices, on whose face</span>
+          </div>
+          <div class="line">
+            <span>No seal is set through all the centuries fled,</span>
+          </div>
+          <div class="line">
+            <span>Laugh on at time, nor know the hurricane race</span>
+          </div>
+          <div class="line">
+            <span>Of his few, hurtling years above a human head.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"And thou, old dune; the stars of heaven shall rove,</span>
+          </div>
+          <div class="line">
+            <span>The galaxies break up to wheel about</span>
+          </div>
+          <div class="line">
+            <span>And in new, glittering constellations move</span>
+          </div>
+          <div class="line">
+            <span>Before thine hour-glass grey hath run its measure out.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Your yesterday, you immemorial things,</span>
+          </div>
+          <div class="line">
+            <span>Whereon the ages yet no shadow cast,</span>
+          </div>
+          <div class="line">
+            <span>For me the hurrying and sleepless wings</span>
+          </div>
+          <div class="line">
+            <span>Of year on stormy year have swept into the past.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Yet think not I have lost that faith and joy</span>
+          </div>
+          <div class="line">
+            <span>Felt when my world was young and I a part.</span>
+          </div>
+          <div class="line">
+            <span>Oh, sea and sand and wild, west wind, your boy</span>
+          </div>
+          <div class="line">
+            <span>Lies hidden safe within my steadfast, changeless heart."</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-ghost"><span class="bold large">THE GHOST</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Night-foundered to the ruin he came</span>
+          </div>
+          <div class="line">
+            <span>Nor recked of its uncanny fame;</span>
+          </div>
+          <div class="line">
+            <span>A haunt of slumber opened here,</span>
+          </div>
+          <div class="line">
+            <span>And weariness, that casts out fear,</span>
+          </div>
+          <div class="line">
+            <span>His footsteps led.</span>
+          </div>
+          <div class="line">
+            <span>The moon swam low; the woods were still;</span>
+          </div>
+          <div class="line">
+            <span>Dog foxes barked upon the hill;</span>
+          </div>
+          <div class="line">
+            <span>With zig-zag wing a flitter-mouse</span>
+          </div>
+          <div class="line">
+            <span>Flew in and out the haunted house</span>
+          </div>
+          <div class="line">
+            <span>And overhead.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Within, decaying wood and lime</span>
+          </div>
+          <div class="line">
+            <span>Lifted their incense up to time;</span>
+          </div>
+          <div class="line">
+            <span>The foot fell hollow; echoes woke,</span>
+          </div>
+          <div class="line">
+            <span>And whispering, half-heard voices spoke</span>
+          </div>
+          <div class="line">
+            <span>Behind the dark.</span>
+          </div>
+          <div class="line">
+            <span>Aloft, the drowsy wanderer found</span>
+          </div>
+          <div class="line">
+            <span>A chamber far above the ground;</span>
+          </div>
+          <div class="line">
+            <span>Whose casement, rusty-ironed and high,</span>
+          </div>
+          <div class="line">
+            <span>Gaped ivy-clad upon the sky,</span>
+          </div>
+          <div class="line">
+            <span>Starlit and stark.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>White-fingered now the moonbeams ran</span>
+          </div>
+          <div class="line">
+            <span>To ripple on the resting man.</span>
+          </div>
+          <div class="line">
+            <span>He saw their stealthy silver creep</span>
+          </div>
+          <div class="line">
+            <span>As it would drown him in his sleep</span>
+          </div>
+          <div class="line">
+            <span>With splendour mild.</span>
+          </div>
+          <div class="line">
+            <span>And then a subtle shadow moved,</span>
+          </div>
+          <div class="line">
+            <span>A spirit that the dead had loved:</span>
+          </div>
+          <div class="line">
+            <span>For wanly limned against the gloom</span>
+          </div>
+          <div class="line">
+            <span>Of that forbid, forgotten room</span>
+          </div>
+          <div class="line">
+            <span>There ran a child.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She twinkled in her candid shift,</span>
+          </div>
+          <div class="line">
+            <span>Light as a moth, so silent, swift,</span>
+          </div>
+          <div class="line">
+            <span>And peeped and peered for what might be</span>
+          </div>
+          <div class="line">
+            <span>Hid in that ancient nursery--</span>
+          </div>
+          <div class="line">
+            <span>A babe of joy.</span>
+          </div>
+          <div class="line">
+            <span>But something called the busy wight:</span>
+          </div>
+          <div class="line">
+            <span>She faded sudden from his sight;</span>
+          </div>
+          <div class="line">
+            <span>And, as her little glimmer paled</span>
+          </div>
+          <div class="line">
+            <span>Like a glass bell, the ghostling wailed,</span>
+          </div>
+          <div class="line">
+            <span>"Where is my toy?"</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="a-test"><span class="bold large">A TEST</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <em class="italics">He</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"I'll bring bright rainbow gold--</span>
+          </div>
+          <div class="line">
+            <span>The rainbow too, a gown for you</span>
+          </div>
+          <div class="line">
+            <span>In glorious fold on fold.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"A necklace of white stars</span>
+          </div>
+          <div class="line">
+            <span>About your throat shall hang and gloat;</span>
+          </div>
+          <div class="line">
+            <span>And, for an ear-ring, Mars.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Unto the ends of earth,</span>
+          </div>
+          <div class="line">
+            <span>Oh, dearest Heart, will I depart</span>
+          </div>
+          <div class="line">
+            <span>To glean their utmost worth.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Until, with great amaze</span>
+          </div>
+          <div class="line">
+            <span>At all I do, my Soul, for you,</span>
+          </div>
+          <div class="line">
+            <span>The good round world shall gaze!"</span>
+          </div>
+          <div class="line">
+            &nbsp;
+          </div>
+          <div class="line">
+            &nbsp;
+          </div>
+          <div class="line">
+            <em class="italics">She</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"But these are gifts of dust,</span>
+          </div>
+          <div class="line">
+            <span>Unfit to prove a hero's love</span>
+          </div>
+          <div class="line">
+            <span>Or win a maiden's trust.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"To love's supreme degree</span>
+          </div>
+          <div class="line">
+            <span>If you would come, then bide at home</span>
+          </div>
+          <div class="line">
+            <span>And never tire of me."</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="dreams"><span class="bold large">DREAMS</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When I have won to rest once more</span>
+          </div>
+          <div class="line">
+            <span>In sanctity of night and sleep,</span>
+          </div>
+          <div class="line">
+            <span>Drift visions from the shadow shore--</span>
+          </div>
+          <div class="line">
+            <span>Small, patient forms that creep.</span>
+          </div>
+          <div class="line">
+            <span>They move in drab; they wear no wings;</span>
+          </div>
+          <div class="line">
+            <span>They are the dreams that might come true--</span>
+          </div>
+          <div class="line">
+            <span>Meek phantoms of the modest things</span>
+          </div>
+          <div class="line">
+            <span>That I have power to do.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Like azure shadows in the snow,</span>
+          </div>
+          <div class="line">
+            <span>Or bloom upon the sun-kissed grape,</span>
+          </div>
+          <div class="line">
+            <span>Sweep lovelier shapes, that gleam and glow</span>
+          </div>
+          <div class="line">
+            <span>And don a rarer shape.</span>
+          </div>
+          <div class="line">
+            <span>They smile with eyes of queens and kings;</span>
+          </div>
+          <div class="line">
+            <span>They call on me to make them true--</span>
+          </div>
+          <div class="line">
+            <span>The lordly, gracious, sovereign things</span>
+          </div>
+          <div class="line">
+            <span>I have no power to do.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Remain such waking dreams as limn</span>
+          </div>
+          <div class="line">
+            <span>Upon reality and truth,</span>
+          </div>
+          <div class="line">
+            <span>Flying like holy seraphim</span>
+          </div>
+          <div class="line">
+            <span>Whose rainbow wings drop ruth.</span>
+          </div>
+          <div class="line">
+            <span>Born of the human sorrowings</span>
+          </div>
+          <div class="line">
+            <span>That pierce our common nature through,</span>
+          </div>
+          <div class="line">
+            <span>They challenge to the mightiest things</span>
+          </div>
+          <div class="line">
+            <span>All men have power to do.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-fire-drake"><span class="bold large">THE FIRE-DRAKE</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>An' it should be you'd make,</span>
+          </div>
+          <div class="line">
+            <span>All for your sweetheart's joy,</span>
+          </div>
+          <div class="line">
+            <span>A jewelly fire-drake,</span>
+          </div>
+          <div class="line">
+            <span>This goes unto the toy:</span>
+          </div>
+          <div class="line">
+            <span>A dragon-fly that's blue,</span>
+          </div>
+          <div class="line">
+            <span>With little glow-worms two,</span>
+          </div>
+          <div class="line">
+            <span>And morning drops of dew</span>
+          </div>
+          <div class="line">
+            <span>Upon a spider's thread.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>All these are simple things</span>
+          </div>
+          <div class="line">
+            <span>And easy to be got,</span>
+          </div>
+          <div class="line">
+            <span>But now the fire-drake's wings</span>
+          </div>
+          <div class="line">
+            <span>Will puzzle you, God wot.</span>
+          </div>
+          <div class="line">
+            <span>The flash that in them lies</span>
+          </div>
+          <div class="line">
+            <span>Shall come not from the skies,</span>
+          </div>
+          <div class="line">
+            <span>But lights the diamond eyes</span>
+          </div>
+          <div class="line">
+            <span>In your dear sweetheart's head.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Lacking that pearly gleam,</span>
+          </div>
+          <div class="line">
+            <span>So magical to see,</span>
+          </div>
+          <div class="line">
+            <span>Your gift is but a dream:</span>
+          </div>
+          <div class="line">
+            <span>The fire-drake cannot be.</span>
+          </div>
+          <div class="line">
+            <span>But if the maiden pout</span>
+          </div>
+          <div class="line">
+            <span>And anger peepeth out,</span>
+          </div>
+          <div class="line">
+            <span>Ere she your heart would flout</span>
+          </div>
+          <div class="line">
+            <span>Fly to the priest and wed.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Better to love she turn</span>
+          </div>
+          <div class="line">
+            <span>At her fond lover's side</span>
+          </div>
+          <div class="line">
+            <span>Than for the fire-drake burn</span>
+          </div>
+          <div class="line">
+            <span>And ever be denied.</span>
+          </div>
+          <div class="line">
+            <span>Go husband and go wife,</span>
+          </div>
+          <div class="line">
+            <span>Without one thought of strife,</span>
+          </div>
+          <div class="line">
+            <span>In blessing of shared life</span>
+          </div>
+          <div class="line">
+            <span>The marriage way to tread.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-seven-maidens"><span class="bold large">THE SEVEN MAIDENS</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>In far away and olden times</span>
+          </div>
+          <div class="line">
+            <span>Sped from their hamlet seven maids</span>
+          </div>
+          <div class="line">
+            <span>To dim and moonlit heather glades,</span>
+          </div>
+          <div class="line">
+            <span>Upon the hour of midnight chimes.</span>
+          </div>
+          <div class="line">
+            <span>One passion drew them secretly;</span>
+          </div>
+          <div class="line">
+            <span>One master joy their little feet</span>
+          </div>
+          <div class="line">
+            <span>Called to that desolate retreat,</span>
+          </div>
+          <div class="line">
+            <span>Where never mortal man might see.</span>
+          </div>
+          <div class="line">
+            <span>'Twas blue-eyed Dian who led the dance,</span>
+          </div>
+          <div class="line">
+            <span>With Linnette, Bethkin, Jennifer,</span>
+          </div>
+          <div class="line">
+            <span>Avisa, Petronell and Nance.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Unknown they kept their nightly cheer;</span>
+          </div>
+          <div class="line">
+            <span>Unguessed beneath the moon they kept</span>
+          </div>
+          <div class="line">
+            <span>Brave frolic, while the village slept,</span>
+          </div>
+          <div class="line">
+            <span>Nor dreamed the danger drawing near;</span>
+          </div>
+          <div class="line">
+            <span>For on a holy Sabbath even,</span>
+          </div>
+          <div class="line">
+            <span>When pirouette had been a shame,</span>
+          </div>
+          <div class="line">
+            <span>Walking sedate, strange music came</span>
+          </div>
+          <div class="line">
+            <span>To tempt the toes of all the seven--</span>
+          </div>
+          <div class="line">
+            <span>Of blue-eyed Dian, who led the dance,</span>
+          </div>
+          <div class="line">
+            <span>Of Linnette, Bethkin, Jennifer,</span>
+          </div>
+          <div class="line">
+            <span>Avisa, Petronell and Nance.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The demon Piper tuned his reed</span>
+          </div>
+          <div class="line">
+            <span>To madden each light-footed maid.</span>
+          </div>
+          <div class="line">
+            <span>They listened, wondering, unafraid,</span>
+          </div>
+          <div class="line">
+            <span>Nor thought upon the sorry speed</span>
+          </div>
+          <div class="line">
+            <span>Awaiting any wanton one</span>
+          </div>
+          <div class="line">
+            <span>Who'd sport upon the Lord's own Day;</span>
+          </div>
+          <div class="line">
+            <span>Then, tripping through that dimpsy grey,</span>
+          </div>
+          <div class="line">
+            <span>Quick fingers joined--the deed was done!</span>
+          </div>
+          <div class="line">
+            <span>For blue-eyed Dian had dared to dance</span>
+          </div>
+          <div class="line">
+            <span>With Linnette, Bethkin, Jennifer,</span>
+          </div>
+          <div class="line">
+            <span>Avisa, Petronell and Nance.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Their eyes like emeralds through the gloom,</span>
+          </div>
+          <div class="line">
+            <span>Leapt elves and fairies, gnomes and imps,</span>
+          </div>
+          <div class="line">
+            <span>In fearful haste to win a glimpse</span>
+          </div>
+          <div class="line">
+            <span>Of the unhappy maidens' doom;</span>
+          </div>
+          <div class="line">
+            <span>For sudden rang a thunder-shock</span>
+          </div>
+          <div class="line">
+            <span>And flashed blue lightning-fork, to show</span>
+          </div>
+          <div class="line">
+            <span>Beneath its grim and baleful glow,</span>
+          </div>
+          <div class="line">
+            <span>Each flying girl turned to a rock!</span>
+          </div>
+          <div class="line">
+            <span>Alas for Dian, who led the dance,</span>
+          </div>
+          <div class="line">
+            <span>For Linnette, Bethkin, Jennifer,</span>
+          </div>
+          <div class="line">
+            <span>Avisa, Petronell and Nance.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And now, at every Hunter's moon,</span>
+          </div>
+          <div class="line">
+            <span>That haggard cirque of stones so still</span>
+          </div>
+          <div class="line">
+            <span>Awakens to immortal thrill,</span>
+          </div>
+          <div class="line">
+            <span>And seven small maids in silver shoon,</span>
+          </div>
+          <div class="line">
+            <span>'Twixt dark of night and white of day,</span>
+          </div>
+          <div class="line">
+            <span>Twinkle upon the sere, old heath,</span>
+          </div>
+          <div class="line">
+            <span>Like living blossoms in a wreath,</span>
+          </div>
+          <div class="line">
+            <span>Then shrink again to granite grey.</span>
+          </div>
+          <div class="line">
+            <span>So blue-eyed Dian shall ever dance</span>
+          </div>
+          <div class="line">
+            <span>With Linnette, Bethkin, Jennifer,</span>
+          </div>
+          <div class="line">
+            <span>Avisa, Petronell and Nance.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-heron"><span class="bold large">THE HERON</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Where leaps the burn by granite stairs</span>
+          </div>
+          <div class="line">
+            <span>Into an eddying pool, he stood,</span>
+          </div>
+          <div class="line">
+            <span>Personifying solitude</span>
+          </div>
+          <div class="line">
+            <span>And meditating his affairs.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A bird august beyond belief</span>
+          </div>
+          <div class="line">
+            <span>Distinguished in his way of thought,</span>
+          </div>
+          <div class="line">
+            <span>Yet the sworn enemy of sport--</span>
+          </div>
+          <div class="line">
+            <span>A "poacher," "vagabond," and "thief."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Creation's lord, the heron knew,</span>
+          </div>
+          <div class="line">
+            <span>Denied his right to fish for trout--</span>
+          </div>
+          <div class="line">
+            <span>A fact that often made him doubt</span>
+          </div>
+          <div class="line">
+            <span>Of justice on a general view.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then me he saw, and, guessing not</span>
+          </div>
+          <div class="line">
+            <span>I held him innocent to be,</span>
+          </div>
+          <div class="line">
+            <span>He spread slow pinions heavily</span>
+          </div>
+          <div class="line">
+            <span>And drifted to a lonelier spot;</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But left a feather by the stream,</span>
+          </div>
+          <div class="line">
+            <span>Deep in the plume, fair, silver grey,</span>
+          </div>
+          <div class="line">
+            <span>With which I'll write upon the day:</span>
+          </div>
+          <div class="line">
+            <span>"Live and let live" shall be my theme.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-grief"><span class="bold large">THE GRIEF</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A grief came unto me at noon of night</span>
+          </div>
+          <div class="line">
+            <span>Blown on a breath of silky, southern air</span>
+          </div>
+          <div class="line">
+            <span>With scent of myrtles and a crown of light</span>
+          </div>
+          <div class="line">
+            <span>For aureole: vanished loveliness was there</span>
+          </div>
+          <div class="line">
+            <span>And old, lost, magical things, all gracious and all rare.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Wings of cloud-purple from the Inland Sea,</span>
+          </div>
+          <div class="line">
+            <span>Foam-tipped, my Grief outspread; the southern sun</span>
+          </div>
+          <div class="line">
+            <span>Burned for a diadem, and mystery,</span>
+          </div>
+          <div class="line">
+            <span>From the dim smoke of olive orchards won,</span>
+          </div>
+          <div class="line">
+            <span>Arrayed that delicate shape in silver they had spun.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>How little, little 'twixt our joy and woe!</span>
+          </div>
+          <div class="line">
+            <span>Not sorrow then, but glad epiphanies</span>
+          </div>
+          <div class="line">
+            <span>Of treasured happiness from long ago,</span>
+          </div>
+          <div class="line">
+            <span>Had been my dreaming; but in bitter wise</span>
+          </div>
+          <div class="line">
+            <span>The Grief looked on my face with a dead woman's eyes.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="on-the-ebb"><span class="bold large">ON THE EBB</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The tide fell fast and foaming, the empty sand shone bright,</span>
+          </div>
+          <div class="line">
+            <span>And by the ocean roaming, upon the edge of night,</span>
+          </div>
+          <div class="line">
+            <span>I found a something stranded with sea-fowl mewing high--</span>
+          </div>
+          <div class="line">
+            <span>A wondrous atom landed and left all high and dry.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Whoever yet suspected mer-babies on a beach?</span>
+          </div>
+          <div class="line">
+            <span>Yet here, by tide neglected, lay one within my reach--</span>
+          </div>
+          <div class="line">
+            <span>A dainty, winsome creature as pink as any rose,</span>
+          </div>
+          <div class="line">
+            <span>His golden tail a feature to take the place of toes.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And through the billows splashing, the sunset in her hair,</span>
+          </div>
+          <div class="line">
+            <span>Over the white foam flashing, there rode a lady fair.</span>
+          </div>
+          <div class="line">
+            <span>His blue-eyed, wild mer-mother swam wailing on the sea.</span>
+          </div>
+          <div class="line">
+            <span>She sparkled through the smother and clamoured mournfully.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>In gentle hands and steady, I lifted her delight,</span>
+          </div>
+          <div class="line">
+            <span>Made sure that she was ready, then flung with all my might.</span>
+          </div>
+          <div class="line">
+            <span>She sprang, like salmon leaping; she laughed in radiant</span>
+          </div>
+          <div class="line">
+            <span>And gathered to safe keeping her rosy, golden boy.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I'd earned a mother's blessing--a good thing any day;</span>
+          </div>
+          <div class="line">
+            <span>But now one fell to guessing what Science had to say:</span>
+          </div>
+          <div class="line">
+            <span>For such authentic wonders, upon an ebbing tide,</span>
+          </div>
+          <div class="line">
+            <span>Show zoologic blunders that cannot be denied.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="scandal"><span class="bold large">SCANDAL</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>An owl alighted in the yew</span>
+          </div>
+          <div class="line">
+            <span>Beside a poet's little house;</span>
+          </div>
+          <div class="line">
+            <span>The hour was nearly half-past two,</span>
+          </div>
+          <div class="line">
+            <span>And, as he ate his juicy mouse,</span>
+          </div>
+          <div class="line">
+            <span>A cuckoo clock made cheerful chime</span>
+          </div>
+          <div class="line">
+            <span>Within and shouted out the time.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"O gracious God!" the owl began,</span>
+          </div>
+          <div class="line">
+            <span>And rolled his round eyes at the moon,</span>
+          </div>
+          <div class="line">
+            <span>"What a black piece of work is man--</span>
+          </div>
+          <div class="line">
+            <span>Well might we miss cuckoo in June.</span>
+          </div>
+          <div class="line">
+            <span>How mad, misguided, inhumane</span>
+          </div>
+          <div class="line">
+            <span>To keep cuckoo upon a chain!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"But all the feathered folk must know;</span>
+          </div>
+          <div class="line">
+            <span>This infamy I'll bring to light,</span>
+          </div>
+          <div class="line">
+            <span>And hoot the horror high and low</span>
+          </div>
+          <div class="line">
+            <span>And scream the crime by day and night.</span>
+          </div>
+          <div class="line">
+            <span>No bird shall sing to him again</span>
+          </div>
+          <div class="line">
+            <span>Who keeps a cuckoo on a chain."</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="to-a-bat"><span class="bold large">TO A BAT</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The sickle moon is in the west</span>
+          </div>
+          <div class="line">
+            <span>And where, against the fading green,</span>
+          </div>
+          <div class="line">
+            <span>A thicket darkles shall be seen</span>
+          </div>
+          <div class="line">
+            <span>The humming chafers on their quest.</span>
+          </div>
+          <div class="line">
+            <span>Come, leather-bird, rise up and gird!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Round sunset eaves there boom again</span>
+          </div>
+          <div class="line">
+            <span>Great beetles on their sharded wings</span>
+          </div>
+          <div class="line">
+            <span>And many air-borne lesser things</span>
+          </div>
+          <div class="line">
+            <span>Are tapping at the window pane.</span>
+          </div>
+          <div class="line">
+            <span>Come, flitter-mouse, and haunt my house.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But where the stygian water broods,</span>
+          </div>
+          <div class="line">
+            <span>Dim twilight homes for evermore,</span>
+          </div>
+          <div class="line">
+            <span>And bats beat up the dusky shore</span>
+          </div>
+          <div class="line">
+            <span>For white, ghost-moths in phantom woods.</span>
+          </div>
+          <div class="line">
+            <span>Come, pipistrelle, be off to hell.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="moon-moth"><span class="bold large">MOON-MOTH</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Beyond the sun, beside a crystal sea</span>
+          </div>
+          <div class="line">
+            <span>She ruled her isle of lapis lazuli.</span>
+          </div>
+          <div class="line">
+            <span>Her palaces of marble, agate, jade</span>
+          </div>
+          <div class="line">
+            <span>Rose like a sheaf of savage flowers and laid</span>
+          </div>
+          <div class="line">
+            <span>A splendour on the waves that only night could fade.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And for her nameless sins and cruelties,</span>
+          </div>
+          <div class="line">
+            <span>Murders of love-mad men and lusts and lies,</span>
+          </div>
+          <div class="line">
+            <span>Her sentence fell and she was swept away</span>
+          </div>
+          <div class="line">
+            <span>From flaming pomps and crimes and royal sway,</span>
+          </div>
+          <div class="line">
+            <span>Hurled from the joy of life, rapt from the light of day.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Yet, being fairest far and loveliest</span>
+          </div>
+          <div class="line">
+            <span>Of any in a woman's body drest,</span>
+          </div>
+          <div class="line">
+            <span>Fate banished not her beauty from the earth--</span>
+          </div>
+          <div class="line">
+            <span>Only her evil happiness and mirth,</span>
+          </div>
+          <div class="line">
+            <span>And left her living dead, doomed to eternal dearth.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The Shadows that do mould our destiny</span>
+          </div>
+          <div class="line">
+            <span>Willed her a moon-moth evermore to be--</span>
+          </div>
+          <div class="line">
+            <span>Woman and insect one in mingled state,</span>
+          </div>
+          <div class="line">
+            <span>A chimera without a peer, or mate,</span>
+          </div>
+          <div class="line">
+            <span>To ancient Night inscribed and Darkness dedicate.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>By day she sleeps, even as the vampires sleep,</span>
+          </div>
+          <div class="line">
+            <span>Behind her sombre wings, that fold and keep</span>
+          </div>
+          <div class="line">
+            <span>Her body's glory hidden: they are brown,</span>
+          </div>
+          <div class="line">
+            <span>Grizzled and amber, jagged and slashed adown</span>
+          </div>
+          <div class="line">
+            <span>With faded serecloth grey--a winding-sheet for gown.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And while she hides within some tawny brake</span>
+          </div>
+          <div class="line">
+            <span>Her shard but echoes the dead leaf and snake,</span>
+          </div>
+          <div class="line">
+            <span>Where, tranced in slumber, through the long day's prime</span>
+          </div>
+          <div class="line">
+            <span>Her motley coverings harmonious chime</span>
+          </div>
+          <div class="line">
+            <span>With sad, crepuscular shades in dusky, twilight rhyme.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Invisible thus; but when returning night</span>
+          </div>
+          <div class="line">
+            <span>Drowns with a purple torrent all the light,</span>
+          </div>
+          <div class="line">
+            <span>She rises woman high and spreads her wing,</span>
+          </div>
+          <div class="line">
+            <span>A rare, unparagoned, unearthly thing</span>
+          </div>
+          <div class="line">
+            <span>Beyond the dream of joy or grief's imagining.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Upon her head two radiant feathery rays</span>
+          </div>
+          <div class="line">
+            <span>Of crocus fire flash upward; but the gaze</span>
+          </div>
+          <div class="line">
+            <span>From her dim, poisonous, and anguished eyes</span>
+          </div>
+          <div class="line">
+            <span>Throbs out with passionate, violet miseries,</span>
+          </div>
+          <div class="line">
+            <span>In hate that never fades and woe that never dies.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Her body, like the heart of a white rose,</span>
+          </div>
+          <div class="line">
+            <span>Shines in the petals of her wings and glows;</span>
+          </div>
+          <div class="line">
+            <span>Her pinions--azure, lilac, marigold--</span>
+          </div>
+          <div class="line">
+            <span>Wide on the dark deliciously unfold</span>
+          </div>
+          <div class="line">
+            <span>As any rainbow bright, as any glacier cold.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Lit with her own and inner gleam, she shines</span>
+          </div>
+          <div class="line">
+            <span>Like a low meteor through the lians and vines,</span>
+          </div>
+          <div class="line">
+            <span>Flies upward high beyond the forest towers,</span>
+          </div>
+          <div class="line">
+            <span>Then swoops and hawks along night-hidden bowers,</span>
+          </div>
+          <div class="line">
+            <span>To hang on murmuring plumes and drink the livid flowers.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Most fair, most foul, at Moira's stern decree</span>
+          </div>
+          <div class="line">
+            <span>The radiant monster wanders wretchedly</span>
+          </div>
+          <div class="line">
+            <span>Haunting each strand and isle of that lone shore</span>
+          </div>
+          <div class="line">
+            <span>Where never human eye may see her more,</span>
+          </div>
+          <div class="line">
+            <span>Or sentient soul delight and tremble and adore.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Yet deep in dreams I often faintly hear,</span>
+          </div>
+          <div class="line">
+            <span>Like a sad wind that strokes my sleeping ear,</span>
+          </div>
+          <div class="line">
+            <span>By fairy waters of that far lagoon,</span>
+          </div>
+          <div class="line">
+            <span>The moon-moth wailing, wailing to the moon</span>
+          </div>
+          <div class="line">
+            <span>Through many a silver night at hour of plenilune.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-hunting"><span class="bold large">THE HUNTING</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When red sun fox steals down the sky,</span>
+          </div>
+          <div class="line">
+            <span>And darkness dims the heavens high,</span>
+          </div>
+          <div class="line">
+            <span>There leap again upon his tracks</span>
+          </div>
+          <div class="line">
+            <span>The eager, starry, hunting packs.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>They glitter, glitter, gold and green,</span>
+            </div>
+            <div class="line">
+              <span>With sparks of frosty fire between,</span>
+            </div>
+            <div class="line">
+              <span>And Dian bright as day;</span>
+            </div>
+            <div class="line">
+              <span>While in the gloaming, far below,</span>
+            </div>
+            <div class="line">
+              <span>Brown owl doth shout "Hi! Tally Ho!</span>
+            </div>
+            <div class="line">
+              <span>Sun fox hath gone away!"</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>To music of the spheres they sweep</span>
+          </div>
+          <div class="line">
+            <span>Over the western world asleep;</span>
+          </div>
+          <div class="line">
+            <span>Then in the east, with sudden rush,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Sun fox shall whisk his white-tipped brush.</span>
+            </div>
+            <div class="line">
+              <span>The field is fading, gold and green,</span>
+            </div>
+            <div class="line">
+              <span>With sparks of frosty fire between,</span>
+            </div>
+            <div class="line">
+              <span>And Dian growing grey;</span>
+            </div>
+            <div class="line">
+              <span>While morning leaps the hither hill</span>
+            </div>
+            <div class="line">
+              <span>And herald lark shouts with a will,</span>
+            </div>
+            <div class="line">
+              <span>"Sun fox hath gone away!"</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh, Huntress fond and silly stars--</span>
+          </div>
+          <div class="line">
+            <span>White Venus, fiery, futile Mars,</span>
+          </div>
+          <div class="line">
+            <span>In vain your pack ye whirl and cast</span>
+          </div>
+          <div class="line">
+            <span>Upon the marches of the vast;</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In vain ye glitter, gold and green,</span>
+            </div>
+            <div class="line">
+              <span>With sparks of frosty fire between,</span>
+            </div>
+            <div class="line">
+              <span>And Dian's arrows fly</span>
+            </div>
+            <div class="line">
+              <span>In silver shafts of broken light;</span>
+            </div>
+            <div class="line">
+              <span>For ne'er shall day be caught by night,</span>
+            </div>
+            <div class="line">
+              <span>And sun fox cannot die.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-good-girl"><span class="bold large">THE GOOD GIRL</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When you were born, a shooting star did sunder</span>
+          </div>
+          <div class="line">
+            <span>The nightly void, and flashed to earth and brought</span>
+          </div>
+          <div class="line">
+            <span>Endowment of rare magic and sweet wonder</span>
+          </div>
+          <div class="line">
+            <span>And gifts beyond your mother's highest thought.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh, blessed be your soul of cheerfulness,</span>
+          </div>
+          <div class="line">
+            <span>Your mind content and steadfast set, to hold</span>
+          </div>
+          <div class="line">
+            <span>Such level journeying through storm and stress</span>
+          </div>
+          <div class="line">
+            <span>Of life's rough weather and hope's heat and cold.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>You come, a restful breath of evening wind</span>
+          </div>
+          <div class="line">
+            <span>Upon the parched day, and cannot see</span>
+          </div>
+          <div class="line">
+            <span>Your winning humour hearten many a mind</span>
+          </div>
+          <div class="line">
+            <span>Where you bestow yourself unconsciously.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Never the violet her own fragrance knew:</span>
+          </div>
+          <div class="line">
+            <span>Even such a flowery innocent are you.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-lover"><span class="bold large">THE LOVER</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Under the silver thatch, where dwells my love,</span>
+          </div>
+          <div class="line">
+            <span>About her dormer window, in the straw,</span>
+          </div>
+          <div class="line">
+            <span>The sparrows build, and with their morning talk</span>
+          </div>
+          <div class="line">
+            <span>Often awaken her.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And by the lattice climbs a crimson rose,</span>
+          </div>
+          <div class="line">
+            <span>Who, if he could but see my dinky dear,</span>
+          </div>
+          <div class="line">
+            <span>Before her loveliness, so wonderful,</span>
+          </div>
+          <div class="line">
+            <span>Would pale with jealousy.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When the first glow of honeysuckle dawn</span>
+          </div>
+          <div class="line">
+            <span>Cuddles her cottage in the dayspring light,</span>
+          </div>
+          <div class="line">
+            <span>I pass upon my woodland road to work</span>
+          </div>
+          <div class="line">
+            <span>And whistle as I come.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And if she hear me and twinkle out of bed</span>
+          </div>
+          <div class="line">
+            <span>To wave a kiss, then all my toil goes well;</span>
+          </div>
+          <div class="line">
+            <span>But if she heed me not, for weariness,</span>
+          </div>
+          <div class="line">
+            <span>How long the working day!</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-motor-car"><span class="bold large">THE MOTOR CAR</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Owlet sat, so quiet and good,</span>
+          </div>
+          <div class="line">
+            <span>At the edge of Yarner Wood,</span>
+          </div>
+          <div class="line">
+            <span>While a mother owl hard by</span>
+          </div>
+          <div class="line">
+            <span>Sought his supper silently.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sudden came two hideous screams,</span>
+          </div>
+          <div class="line">
+            <span>Wakened owlet from his dreams;</span>
+          </div>
+          <div class="line">
+            <span>Down the road, on unseen wing,</span>
+          </div>
+          <div class="line">
+            <span>Swept a vast and awful thing.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Twice he heard the monster shriek,</span>
+          </div>
+          <div class="line">
+            <span>Saw its head and shining beak</span>
+          </div>
+          <div class="line">
+            <span>Twixt huge eyes, that burned the night,</span>
+          </div>
+          <div class="line">
+            <span>Brighter than the moon was bright.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Hooting horribly it fled--</span>
+          </div>
+          <div class="line">
+            <span>Where the water-meadows spread.</span>
+          </div>
+          <div class="line">
+            <span>"He will catch," thought owlet now,</span>
+          </div>
+          <div class="line">
+            <span>"That red thing they call the cow."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Came his parent presently:</span>
+          </div>
+          <div class="line">
+            <span>Heard him squeak with fearful glee,</span>
+          </div>
+          <div class="line">
+            <span>"Mother dear, I've seen and heard</span>
+          </div>
+          <div class="line">
+            <span>Such a devil of a bird!"</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-sea-scouts"><span class="bold large">THE SEA SCOUTS</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>While all alone I wandered</span>
+          </div>
+          <div class="line">
+            <span>At even by the sea,</span>
+          </div>
+          <div class="line">
+            <span>Where winds and water pondered</span>
+          </div>
+          <div class="line">
+            <span>Of how they came to be;</span>
+          </div>
+          <div class="line">
+            <span>Where kittiwakes were crying</span>
+          </div>
+          <div class="line">
+            <span>And salty spindrift flying</span>
+          </div>
+          <div class="line">
+            <span>Through daylight slowly dying</span>
+          </div>
+          <div class="line">
+            <span>A Shape confronted me.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She faced the broad Atlantic--</span>
+          </div>
+          <div class="line">
+            <span>That maid of stately mien,</span>
+          </div>
+          <div class="line">
+            <span>Purer than foam, gigantic</span>
+          </div>
+          <div class="line">
+            <span>As Amazonian Queen.</span>
+          </div>
+          <div class="line">
+            <span>Her billowy robe, unknowing,</span>
+          </div>
+          <div class="line">
+            <span>How wild the wind was blowing,</span>
+          </div>
+          <div class="line">
+            <span>Showed not a throb or flowing,</span>
+          </div>
+          <div class="line">
+            <span>Hung steady and serene.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>It was no fellow being</span>
+          </div>
+          <div class="line">
+            <span>For she stood ten feet high,</span>
+          </div>
+          <div class="line">
+            <span>And seaward gazed, unseeing</span>
+          </div>
+          <div class="line">
+            <span>The human passer-by;</span>
+          </div>
+          <div class="line">
+            <span>But only billows roaming,</span>
+          </div>
+          <div class="line">
+            <span>And wide-winged sea-fowl homing</span>
+          </div>
+          <div class="line">
+            <span>Through crepuscule and gloaming</span>
+          </div>
+          <div class="line">
+            <span>Beneath an ashen sky.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The spectre rose before me</span>
+          </div>
+          <div class="line">
+            <span>Most woeful, wan and white</span>
+          </div>
+          <div class="line">
+            <span>Upon that foreshore stormy</span>
+          </div>
+          <div class="line">
+            <span>Between the day and night;</span>
+          </div>
+          <div class="line">
+            <span>And such an apparition</span>
+          </div>
+          <div class="line">
+            <span>In this unique position,</span>
+          </div>
+          <div class="line">
+            <span>Despite her sad condition</span>
+          </div>
+          <div class="line">
+            <span>Awoke my wild delight.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then came three youthful creatures,</span>
+          </div>
+          <div class="line">
+            <span>And them I bade with awe</span>
+          </div>
+          <div class="line">
+            <span>Behold the mournful features</span>
+          </div>
+          <div class="line">
+            <span>Of phantom on the shore.</span>
+          </div>
+          <div class="line">
+            <span>They laughed and said she'd drifted</span>
+          </div>
+          <div class="line">
+            <span>To land with bosom rifted--</span>
+          </div>
+          <div class="line">
+            <span>A figure-head uplifted</span>
+          </div>
+          <div class="line">
+            <span>From wreck of "Margery Dawe."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>They dared, those sea-scout shavers</span>
+          </div>
+          <div class="line">
+            <span>Who watched this lonely coast,</span>
+          </div>
+          <div class="line">
+            <span>Assert in treble quavers</span>
+          </div>
+          <div class="line">
+            <span>We stood before a post;</span>
+          </div>
+          <div class="line">
+            <span>They treated as a fiction</span>
+          </div>
+          <div class="line">
+            <span>My gratified conviction</span>
+          </div>
+          <div class="line">
+            <span>That, in her pale affliction,</span>
+          </div>
+          <div class="line">
+            <span>We'd met a salt-sea ghost!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Thus hard-eyed youth advances</span>
+          </div>
+          <div class="line">
+            <span>By shadowless, stark way</span>
+          </div>
+          <div class="line">
+            <span>Our middle-aged romances</span>
+          </div>
+          <div class="line">
+            <span>To slight and scorn and slay;</span>
+          </div>
+          <div class="line">
+            <span>Our make-believe to tatter;</span>
+          </div>
+          <div class="line">
+            <span>Our gallant dreams to scatter;</span>
+          </div>
+          <div class="line">
+            <span>To flout our faiths and shatter</span>
+          </div>
+          <div class="line">
+            <span>Our twilight in their day.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="song-for-the-spheres"><span class="bold large">SONG FOR THE SPHERES</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A drop of fire from a flying sun--</span>
+          </div>
+          <div class="line">
+            <span>Sing, old stars, the World's begun.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>An ocean warm where electrons strive--</span>
+          </div>
+          <div class="line">
+            <span>Sing, old stars, the World's alive.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Age upon age and link upon link--</span>
+          </div>
+          <div class="line">
+            <span>Shout, old stars, the World can think.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>War's red knife hisses home to the haft--</span>
+          </div>
+          <div class="line">
+            <span>Mourn, old stars, the World runs daft.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Reason and Love shall conquer and reign--</span>
+          </div>
+          <div class="line">
+            <span>Sing, old stars, the World grows sane.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Liberty, Liberty, Liberty!</span>
+          </div>
+          <div class="line">
+            <span>Shout, old stars, the World is free.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="the-circle"><span class="bold large">THE CIRCLE</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When shepherd darkness folds the fading day</span>
+          </div>
+          <div class="line">
+            <span>And faints the West beneath the world's wide brim,</span>
+          </div>
+          <div class="line">
+            <span>There stands a brotherhood, remote and dim,</span>
+          </div>
+          <div class="line">
+            <span>Of cowled and hooded wights rolled up in granite grey.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Spirits of dusk from out a far-off prime</span>
+          </div>
+          <div class="line">
+            <span>Beyond the shadowy pale of bygone eld,</span>
+          </div>
+          <div class="line">
+            <span>Immutable and constant and unquelled,</span>
+          </div>
+          <div class="line">
+            <span>They hold their everlasting state and tryst with Time.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>These stones have seen the red-eyed wolf pack throng</span>
+          </div>
+          <div class="line">
+            <span>To slay the fleeting elk upon the waste,</span>
+          </div>
+          <div class="line">
+            <span>And they have marked the cave bear's clumsy haste,</span>
+          </div>
+          <div class="line">
+            <span>Shuffling great golden furse and ragged rocks among.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>O cirque, what meanest thou? Sepulchral lore,</span>
+          </div>
+          <div class="line">
+            <span>Or ritual of the quick? Did thirsty god</span>
+          </div>
+          <div class="line">
+            <span>Drink blood of sacrifice upon this sod?</span>
+          </div>
+          <div class="line">
+            <span>Art thou a temple wrought for deities of yore?</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>What dread, what joy, what Neolithic rule,</span>
+          </div>
+          <div class="line">
+            <span>What shouts of agony or pæans of praise</span>
+          </div>
+          <div class="line">
+            <span>Awoke, ye stones, the morning of your days?</span>
+          </div>
+          <div class="line">
+            <span>They answer not, but seek the shadowy crepuscule.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The Stone Man lifted them; his hairy hand</span>
+          </div>
+          <div class="line">
+            <span>They felt and knew, when Night's eternal brow</span>
+          </div>
+          <div class="line">
+            <span>Gleamed with another diadem than now</span>
+          </div>
+          <div class="line">
+            <span>Ere Egypt's mountain graves pressed on the desert sand.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Bowed but enduring, Time hath failed to break</span>
+          </div>
+          <div class="line">
+            <span>That emblem of eternity they trace</span>
+          </div>
+          <div class="line">
+            <span>Upon the bosom of this desolate place;</span>
+          </div>
+          <div class="line">
+            <span>And holy shall it be for their most ancient sake.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>They have withdrawn upon the unseen light</span>
+          </div>
+          <div class="line">
+            <span>Of immemorial time; the vanished past</span>
+          </div>
+          <div class="line">
+            <span>Receives them once again to haunt her vast--</span>
+          </div>
+          <div class="line">
+            <span>A sanctity beyond wild Chaos and old Night.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="to-anthea-s-bosom"><span class="bold large">TO ANTHEA'S BOSOM</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When that I went, a little lad, to school--</span>
+          </div>
+          <div class="line">
+            <span>One half a cherub and one half a fool--</span>
+          </div>
+          <div class="line">
+            <span>The weary pedant dinned upon my ears</span>
+          </div>
+          <div class="line">
+            <span>That all the world is but two hemispheres.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Maybe I doubted then, for I was born</span>
+          </div>
+          <div class="line">
+            <span>To laugh the wisdom of the wise to scorn;</span>
+          </div>
+          <div class="line">
+            <span>But now, indeed, most surely it appears</span>
+          </div>
+          <div class="line">
+            <span>That all the world is but two hemispheres.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="dust"><span class="bold large">DUST</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A cone of dust is dancing at the lane end,</span>
+          </div>
+          <div class="line">
+            <span>Caught from the surface of the thirsty trackway</span>
+          </div>
+          <div class="line">
+            <span>And dropped again, into annihilation,</span>
+          </div>
+          <div class="line">
+            <span>By gusts from nowhere.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Upon the wheel of little whirlwind moulded,</span>
+          </div>
+          <div class="line">
+            <span>It billows in a wreath of spiral beauty,</span>
+          </div>
+          <div class="line">
+            <span>But, swifter than the smoke of fire dislimning,</span>
+          </div>
+          <div class="line">
+            <span>Endures no longer.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>So I, intrinsical one slippery moment</span>
+          </div>
+          <div class="line">
+            <span>Share with my brief, grey brother at the lane end</span>
+          </div>
+          <div class="line">
+            <span>His buffet into being, then, unfettered,</span>
+          </div>
+          <div class="line">
+            <span>A like dismissal.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Dust of the cosmos, you alone eternal</span>
+          </div>
+          <div class="line">
+            <span>Immutable behind a myriad garments,</span>
+          </div>
+          <div class="line">
+            <span>Your stars grow ripe upon the boughs of heaven;</span>
+          </div>
+          <div class="line">
+            <span>But you bate nothing.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>All one to you the forms and the reforming,</span>
+          </div>
+          <div class="line">
+            <span>The fashion of the man, or mouse, or mountain:</span>
+          </div>
+          <div class="line">
+            <span>So order be declared and conquered chaos</span>
+          </div>
+          <div class="line">
+            <span>Dethroned for ever.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="young-night"><span class="bold large">YOUNG NIGHT</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When flitter-mice with zigzag flight</span>
+          </div>
+          <div class="line">
+            <span>Specked the green sky at twilight dim;</span>
+          </div>
+          <div class="line">
+            <span>When the wise bird from out the brim</span>
+          </div>
+          <div class="line">
+            <span>Of forest darkness to the light</span>
+          </div>
+          <div class="line">
+            <span>Floated and perched upon a height,</span>
+          </div>
+          <div class="line">
+            <span>With mellow voice to welcome night;</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When day was stolen from the dale</span>
+          </div>
+          <div class="line">
+            <span>To leave, where little river goes,</span>
+          </div>
+          <div class="line">
+            <span>One farewell, dusky gleam of rose;</span>
+          </div>
+          <div class="line">
+            <span>When down the purple of the vale</span>
+          </div>
+          <div class="line">
+            <span>A wingèd beetle boomed his tale</span>
+          </div>
+          <div class="line">
+            <span>And night-moth drank from night-flow'r pale;</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When grey churn-owl within a glade</span>
+          </div>
+          <div class="line">
+            <span>Purred through the gloaming, till the sky</span>
+          </div>
+          <div class="line">
+            <span>Throbbed with his goblin melody;</span>
+          </div>
+          <div class="line">
+            <span>When, by her stone, the glow-worm played</span>
+          </div>
+          <div class="line">
+            <span>And with an emerald lamp betrayed</span>
+          </div>
+          <div class="line">
+            <span>The new-born dew-drops on the blade;</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When young Night's self in starry dress</span>
+          </div>
+          <div class="line">
+            <span>Came timid to her throne again--</span>
+          </div>
+          <div class="line">
+            <span>Sweet anodyne for dead day's pain</span>
+          </div>
+          <div class="line">
+            <span>And fire and wound and fevered stress--</span>
+          </div>
+          <div class="line">
+            <span>With heart to soothe and will to bless,</span>
+          </div>
+          <div class="line">
+            <span>Then how I loved her loveliness!</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="jill-bassett"><span class="bold large">JILL BASSETT</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Jill Bassett, she was dancing mad,</span>
+          </div>
+          <div class="line">
+            <span>And any lad</span>
+          </div>
+          <div class="line">
+            <span>Who'd win that most amazing maid</span>
+          </div>
+          <div class="line">
+            <span>Must needs be a light-footed blade.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>So said the folk; but I had pelf,</span>
+          </div>
+          <div class="line">
+            <span>And when the elf</span>
+          </div>
+          <div class="line">
+            <span>Found she might reign at Chadley Wood,</span>
+          </div>
+          <div class="line">
+            <span>Though I weren't young, she thought it good.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She danced into my arms, and then,</span>
+          </div>
+          <div class="line">
+            <span>Along of men</span>
+          </div>
+          <div class="line">
+            <span>And some harsh words I'd got to say,</span>
+          </div>
+          <div class="line">
+            <span>One autumn time she danced away.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She vanished, like a bow on rain,</span>
+          </div>
+          <div class="line">
+            <span>And, to be plain,</span>
+          </div>
+          <div class="line">
+            <span>I didn't feel no mighty wrench</span>
+          </div>
+          <div class="line">
+            <span>Nor much bewail the giglet wench.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then came a bit of funny news</span>
+          </div>
+          <div class="line">
+            <span>From Billy Bewes:</span>
+          </div>
+          <div class="line">
+            <span>He'd seen the wretch at Christmas time</span>
+          </div>
+          <div class="line">
+            <span>Dancing in Plymouth pantomime!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>For five good year no more was heard</span>
+          </div>
+          <div class="line">
+            <span>Of the rash bird;</span>
+          </div>
+          <div class="line">
+            <span>Then danced she back; but not to I:</span>
+          </div>
+          <div class="line">
+            <span>Her mother took her in to die.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Her breathing parts was nearly gone,</span>
+          </div>
+          <div class="line">
+            <span>Her dancing done.</span>
+          </div>
+          <div class="line">
+            <span>She wilted, like a davered rose;</span>
+          </div>
+          <div class="line">
+            <span>But I forgave her at the close.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>With Bassett folk they dug her pit;</span>
+          </div>
+          <div class="line">
+            <span>It wasn't fit</span>
+          </div>
+          <div class="line">
+            <span>That she should lie where I shall go:</span>
+          </div>
+          <div class="line">
+            <span>Her mother granted that was so.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then, passing New Year's night, I saw</span>
+          </div>
+          <div class="line">
+            <span>Upon the hoar</span>
+          </div>
+          <div class="line">
+            <span>Of moony frost in churchyard ground</span>
+          </div>
+          <div class="line">
+            <span>The woman dancing on her mound!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I'll take my oath afore my God</span>
+          </div>
+          <div class="line">
+            <span>She swept the sod</span>
+          </div>
+          <div class="line">
+            <span>With naked feet and showed her charms</span>
+          </div>
+          <div class="line">
+            <span>And twirled about her twinkling arms.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A brace of owls that saw her too</span>
+          </div>
+          <div class="line">
+            <span>Made their hulloo,</span>
+          </div>
+          <div class="line">
+            <span>To which she danced so wondrous brave</span>
+          </div>
+          <div class="line">
+            <span>Over the silver on her grave.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Mayhap the cold got in her bones</span>
+          </div>
+          <div class="line">
+            <span>Under the stones,</span>
+          </div>
+          <div class="line">
+            <span>And up the wilful ghostey came</span>
+          </div>
+          <div class="line">
+            <span>To warm herself at her old game.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And I was on my hoss's back--</span>
+          </div>
+          <div class="line">
+            <span>I'd had my whack,</span>
+          </div>
+          <div class="line">
+            <span>But only just the usual three,</span>
+          </div>
+          <div class="line">
+            <span>And no man ever doubted me.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="left pfirst" id="tailpiece"><span class="bold large">TAILPIECE</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>At turn of night the wild geese fly</span>
+          </div>
+          <div class="line">
+            <span>And waken drowsy wonder</span>
+          </div>
+          <div class="line">
+            <span>Beneath their wingèd thunder;</span>
+          </div>
+          <div class="line">
+            <span>Then silence falls again,</span>
+          </div>
+          <div class="line">
+            <span>Until the homing barn-owls cry</span>
+          </div>
+          <div class="line">
+            <span>And ring with hollow laughter,</span>
+          </div>
+          <div class="line">
+            <span>From ivy-tod and rafter,</span>
+          </div>
+          <div class="line">
+            <span>The farm upon the plain.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The lark's aloft, a bead of gold;</span>
+          </div>
+          <div class="line">
+            <span>While yet the earth lies darkling,</span>
+          </div>
+          <div class="line">
+            <span>His little body's sparkling:</span>
+          </div>
+          <div class="line">
+            <span>The sun has risen for him.</span>
+          </div>
+          <div class="line">
+            <span>A dotted track on dew-grey fold</span>
+          </div>
+          <div class="line">
+            <span>The weary fox is leaving;</span>
+          </div>
+          <div class="line">
+            <span>I hear the plovers peeving;</span>
+          </div>
+          <div class="line">
+            <span>The morning star grows dim.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 6em"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="backmatter"></div>
+    <div class="cleardoublepage"></div>
+  </div>
+</body>
+</html>
